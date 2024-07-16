@@ -14,7 +14,7 @@ def add_product(request):
             return redirect('product_list')
     else:
         form = ProductForm()
-    return render(request, 'product/add_product.html', {'form': form})
+    return render(request, 'store/add_product.html', {'form': form})
 
 @login_required
 def edit_product(request, product_id):

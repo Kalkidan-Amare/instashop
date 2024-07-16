@@ -10,5 +10,5 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('choose-template/', views.choose_template, name='choose_template'),
     path('purchase-template/<int:template_id>/', views.purchase_template, name='purchase_template'),
-    path('store/<str:store_name>/', views.store_view, name='store_view'),
+    path('<int:id>/', views.store_view, name='store_view'),
 ]

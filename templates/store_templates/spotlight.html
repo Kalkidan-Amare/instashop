@@ -1,25 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Store name Inc</title>
-    <link rel="stylesheet" href="./css/template.css">
-    
-</head>
-<body class="template">
-    <header>
-        <div>■ Store name Inc</div>
-        <nav>
-            <a href="#">Dashboard</a>
-            <a href="#">Home</a>
-            <a href="#">All Products</a>
-            <a href="#">Contact Us</a>
-            <a href="#">About Us</a>
-            <a href="#">Store</a>
-        </nav>
-    </header>
+{% extends "store_templates/template_main.html" %}
+{% load static %}
+{% block title %} <title> Store </title> {% endblock title %}
+{% block css %} <link rel="stylesheet" href="{% static 'css/template.css' %}"> {% endblock css %}
 
+{% block content %}
     <div class="hero">
         <h1>Store name Inc</h1>
         <p>Discover curated premium products</p>
@@ -83,5 +67,4 @@
             <!-- Repeat the product-card div for more products -->
         </div>
     </div>
-</body>
-</html>
+{% endblock content %}

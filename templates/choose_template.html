@@ -16,6 +16,7 @@
             <button class="filter-btn">Rating</button>
         </div>
     </div>
+    
     <div class="template-grid">
         {% for template in templates %}
         <div class="template-card">
@@ -26,7 +27,9 @@
                     <div class="template-price">Free</div>
                 </div>
                     <div class="template-description">{{ template.description }}</div>
-                <button class="select-btn">Select Template</button>
+                <button class="select-btn">
+                    <a href="{% url 'purchase_template' template.id %}">Select Template</a>
+                </button>
             </div>
         </div>
         {% endfor %}

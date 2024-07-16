@@ -1,0 +1,99 @@
+{% extends "store/store_main.html" %}
+{% load static %}
+
+{% block title %}<title> Dashboard </title>{% endblock title %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">{% endblock css %}
+{% load static %}
+
+{% block content %}
+<div class='body'>
+        
+    {% include "store/sidebar.html" %}
+
+    <div class="main-content">
+        <div class="header">
+            <h1>Dashboard</h1>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">$1,402</div>
+                <div class="stat-label">Sales</div>
+                <div class="stat-change negative">-5%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">3,201</div>
+                <div class="stat-label">Orders</div>
+                <div class="stat-change positive">+8%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">1,403</div>
+                <div class="stat-label">Visits</div>
+                <div class="stat-change negative">-5%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">2,902</div>
+                <div class="stat-label">Units</div>
+                <div class="stat-change negative">-2%</div>
+            </div>
+        </div>
+        <div class="chart-container">
+            <div class="chart-title">Sales over time</div>
+            <div>
+                <canvas id="salesChart"></canvas>
+            </div>
+        </div>
+
+        <div class="orders">
+            <h1>Recent orders</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order</th>
+                        <th>Date</th>
+                        <th>Items</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#12345</td>
+                        <td>Jul 22</td>
+                        <td>2 items</td>
+                        <td><span class="status in-transit">In transit</span></td>
+                        <td>$120</td>
+                    </tr>
+                    <tr>
+                        <td>#12346</td>
+                        <td>Jul 21</td>
+                        <td>1 item</td>
+                        <td><span class="status delivered">Delivered</span></td>
+                        <td>$80</td>
+                    </tr>
+                    <tr>
+                        <td>#12347</td>
+                        <td>Jul 20</td>
+                        <td>3 items</td>
+                        <td><span class="status in-transit">In transit</span></td>
+                        <td>$150</td>
+                    </tr>
+                    <tr>
+                        <td>#12348</td>
+                        <td>Jul 19</td>
+                        <td>1 item</td>
+                        <td><span class="status delivered">Delivered</span></td>
+                        <td>$70</td>
+                    </tr>
+                    <tr>
+                        <td>#12349</td>
+                        <td>Jul 18</td>
+                        <td>2 items</td>
+                        <td><span class="status in-transit">In transit</span></td>
+                        <td>$100</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock content %}

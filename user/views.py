@@ -33,7 +33,7 @@ def dashboard(request):
     if request.user.is_seller:
         products = Product.objects.filter(owner=request.user)
         orders = Order.objects.filter(seller=request.user)
-        return render(request, 'dashboard.html', {'products': products, 'orders': orders})
+        return render(request, 'store/dashboard.html', {'products': products, 'orders': orders})
     else:
         return redirect('choose_template')
 
@@ -48,16 +48,14 @@ def purchase_template(request, template_id):
     request.user.template = template
     request.user.is_seller = True
     request.user.save()
-    return redirect('store_view', store_name=request.user.store_name)
+    return redirect('store_view', request.user.id)
 
-def store_view(request, store_name):
-    store_owner = get_object_or_404(User, store_name=store_name)
+def store_view(request, id):
+    store_owner = get_object_or_404(User, id=id)
     products = Product.objects.filter(owner=store_owner)
-    context = {
-        'store_owner': store_owner,
-        'products': products,
-    }
+    context = {'store_owner': store_owner, 'products': products}
+    render_template = store_owner.template.name
     if request.user == store_owner:
         orders = Order.objects.filter(seller=store_owner)
         context['orders'] = orders
-    return render(request, 'store_view.html', context)
+    return render(request, f'store_templates/{render_template}.html', context)

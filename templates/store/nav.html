@@ -1,0 +1,16 @@
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/nav.css' %}">{% endblock css %}
+<header>
+    <div class="logo">📸 InstShop</div>
+    <nav>
+        <a href="#">Shop</a>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+    </nav>
+    <div>
+        <input type="text" placeholder="Search" class="search-bar">
+        <button class="sign-up-btn">
+            <a href="{% url 'signup' %}">Sign Up</a>
+        </button>
+    </div>
+</header>

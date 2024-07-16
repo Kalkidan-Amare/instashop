@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard</title>
+    <link rel="stylesheet" href="./css/analytics.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <div class="analtics">
+        <div class="header">
+            <div class="company-name">Acme Inc</div>
+        </div>
+        
+        <h1>Analytics</h1>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">20, 500 Br.</div>
+                <div class="stat-label">Total Sales</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">178</div>
+                <div class="stat-label">Sold Units</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">19</div>
+                <div class="stat-label">Todays Sales</div>
+            </div>
+            
+        </div>
+        
+        <div class="overall-anal">
+            <div class="order-summary">
+                <h2>Order Summary</h2>
+                <div>
+                    <h4>Pending Orders</h4>
+                    <h3>40%</h3>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-bar-fill pending" style="width: 40%;"></div>
+                </div>
+                <div>
+                    <h4>Shipped Orders </h4>
+                    <h3>30%</h3>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-bar-fill shipped" style="width: 30%;"></div>
+                </div>
+                <div>
+                    <h4>Delivered Orders </h4>
+                    <h3>30%</h3>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-bar-fill delivered" style="width: 30%;"></div>
+                </div>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title"><h2>Sales over time</h2></div>
+                <div>
+                    <canvas id="salesChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sales-history">
+            <h2>Sales History</h2>
+            <table class="sales-history">
+                <thead>
+                    <tr>
+                        <th>Request ID</th>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Price/Kg</th>
+                        <th>Delivery Location</th>
+                        <th>Delivery Timeline</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>S8001</td>
+                        <td>Acetaminophen</td>
+                        <td>500 KG</td>
+                        <td>1500</td>
+                        <td>Addis Abeba</td>
+                        <td>12 Aug</td>
+                        <td><button class="action-button">Accept</button></td>
+                    </tr>
+                    <!-- Repeat the above row structure for more entries -->
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="pagination">
+            <button>Previous</button>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>Next</button>
+        </div>
+    </div>
+    <script src="./JS/cart.js"></script>
+
+</body>
+</html>
