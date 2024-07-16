@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Dashboard</h1>
+
+{% if user.is_seller %}
+    <h2>Your Products</h2>
+    {% if products %}
+        <ul>
+        {% for product in products %}
+            <li>{{ product.name }} - ${{ product.price }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>You haven't added any products yet.</p>
+    {% endif %}
+
+    <h2>Your Orders</h2>
+    {% if orders %}
+        <ul>
+        {% for order in orders %}
+            <li>Order #{{ order.id }} - ${{ order.total_price }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>You haven't received any orders yet.</p>
+    {% endif %}
+{% else %}
+    <p>You're not a seller yet. <a href="{% url 'choose_template' %}">Become a seller</a> to access your dashboard.</p>
+{% endif %}
+{% endblock %}

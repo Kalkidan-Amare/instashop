@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ store_owner.store_name }}'s Store</h1>
+
+<h2>Products:</h2>
+<ul>
+{% for product in products %}
+    <li>{{ product.name }} - ${{ product.price }}</li>
+{% empty %}
+    <li>No products available.</li>
+{% endfor %}
+</ul>
+
+{% if orders %}
+<h2>Orders:</h2>
+<ul>
+{% for order in orders %}
+    <li>Order #{{ order.id }} - ${{ order.total_price }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endblock %}

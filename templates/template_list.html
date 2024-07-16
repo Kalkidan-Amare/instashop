@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Templates</title>
+</head>
+<body>
+    <h1>Available Templates</h1>
+    <ul>
+    {% for template in templates %}
+        <li>{{ template.name }} - {{ template.price }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

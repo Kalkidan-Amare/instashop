@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Choose Your Store Template{% endblock %}
+
+{% block content %}
+<h2 style="color: #333;">Choose Your Store Template</h2>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+    {% for template in templates %}
+    <div style="width: 30%; margin-bottom: 20px; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
+        <h3>{{ template.name }}</h3>
+        <p>{{ template.description }}</p>
+        <p>Price: ${{ template.price }}</p>
+        <a href="{% url 'purchase_template' template.id %}" style="display: inline-block; background: #e8491d; color: #fff; padding: 5px 10px; text-decoration: none; border-radius: 3px;">Select Template</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

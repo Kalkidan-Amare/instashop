@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ store_owner.store_name }}</h1>
+<p>Discover curated premium products</p>
+
+{% if user == store_owner %}
+    <h2>Your Products</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity Sold</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.order_set.count }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Orders</h2>
+    <ul>
+    {% for order in orders %}
+        <li>{{ order.product.name }} - Quantity: {{ order.quantity }} - Buyer: {{ order.buyer.username }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <h2>Products</h2>
+    {% for product in products %}
+    <div>
+        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.price }}</p>
+        <a href="#">Buy Now</a>
+    </div>
+    {% endfor %}
+{% endif %}
+{% endblock %}

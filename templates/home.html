@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - InstaShop{% endblock %}
+
+{% block content %}
+<h1 style="color: #333;">Welcome to InstaShop</h1>
+<p style="font-size: 18px;">Create your own online store in minutes!</p>
+<a href="{% url 'signup' %}" style="display: inline-block; background: #e8491d; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Get Started</a>
+{% endblock %}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}InstaShop{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; }
+        .container { width: 80%; margin: auto; overflow: hidden; }
+        header { background: #333; color: #fff; padding-top: 30px; min-height: 70px; border-bottom: #bbb 1px solid; }
+        header a { color: #fff; text-decoration: none; text-transform: uppercase; font-size: 16px; }
+        header ul { padding: 0; margin: 0; list-style: none; }
+        header li { float: left; display: inline; padding: 0 20px 0 20px; }
+        header #branding { float: left; }
+        header #branding h1 { margin: 0; }
+        header nav { float: right; margin-top: 10px; }
+        header .highlight, header .current a { color: #e8491d; font-weight: bold; }
+        header a:hover { color: #ffffff; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Insta</span>Shop</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    {% if user.is_authenticated %}
+                        {% if user.is_seller %}
+                            <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                        {% else %}
+                            <li><a href="{% url 'choose_template' %}">Become a Seller</a></li>
+                        {% endif %}
+                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                    {% else %}
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                        <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
