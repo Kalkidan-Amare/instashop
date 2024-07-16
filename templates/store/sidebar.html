@@ -4,8 +4,8 @@
         <div class="avatar"></div>
         <span>Acme Inc</span>
     </div>
-    <div class="menu-item active"><i>🏠</i> Dashboard</div>
-    <div class="menu-item"><i>📦</i> Products</div>
+    <div class="menu-item active"> <a href="{% url 'dashboard' %}"><i>🏠</i> Dashboard<a/></div>
+    <div class="menu-item"> <a href="{% url 'product_list' %}"> <i>📦</i> Products<a/></div>
     <div class="menu-item"><i>📋</i> Orders</div>
     <div class="menu-item"><i>🗄️</i> Inventory</div>
     <div class="menu-item"><i>📣</i> Marketing</div>

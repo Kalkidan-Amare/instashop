@@ -1,0 +1,50 @@
+{% extends "store/store_main.html" %}
+{% load static %}
+
+{% block title %}<title>Products</title>{% endblock title %}
+
+{% block css %}
+{% comment %} <link rel="stylesheet" href="{% static 'css/' %}"> {% endcomment %}
+{% endblock css %}
+
+{% block content %}
+<div class='body'>
+    {% include "store/sidebar.html" %}
+    <div class="main-content">
+        <div class="header">
+            <h1>Products</h1>
+            <a href="{% url 'add_product' %}" class="add-product-btn">Add New Product</a>
+        </div>
+
+        <div class="products-list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                    <tr>
+                        <td>{{ product.name }}</td>
+                        <td>${{ product.price }}</td>
+                        <td>{{ product.stock }}</td>
+                        <td>
+                            <a href="{% url 'edit_product' product.id %}" class="action-btn edit">Edit</a>
+                            <a href="{% url 'delete_product' product.id %}" class="action-btn delete">Delete</a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="4">No products available. Add your first product!</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock content %}

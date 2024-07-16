@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Product
 from .forms import ProductForm
@@ -29,6 +29,17 @@ def edit_product(request, product_id):
     return render(request, 'product/edit_product.html', {'form': form})
 
 @login_required
+def delete_product(request, product_id):
+    product = get_object_or_404(Product, id=product_id, owner=request.user)
+    
+    if request.method == 'POST':
+        product.delete()
+        # messages.success(request, f'Product "{product.name}" has been deleted successfully.')
+        return redirect('product_list')
+    
+    return render(request, 'store/confirm_delete_product.html', {'product': product})
+
+@login_required
 def product_list(request):
     products = Product.objects.filter(owner=request.user)
-    return render(request, 'product/product_list.html', {'products': products})
+    return render(request, 'store/product.html', {'products': products})

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="t3-container">
+    <header class="t3-header">
+        <h1>{{ user.store_name }}</h1>
+        <nav>
+            <a href="#products">Shop</a>
+            <a href="#about">Our Story</a>
+            <a href="#contact">Reach Out</a>
+        </nav>
+    </header>
+    <main class="t3-main">
+        <section id="products" class="t3-products">
+            <h2>Shop Our Collection</h2>
+            <div class="product-flex">
+                {% for product in products %}
+                <div class="product-box">
+                    <img src="{{ product.image.url }}" alt="{{ product.product_name }}">
+                    <h3>{{ product.product_name }}</h3>
+                    <p>{{ product.description|truncatewords:15 }}</p>
+                    <p class="price">${{ product.price }}</p>
+                    <!-- <button onclick="buyProduct({{ product.id }})">Add to Cart</button> -->
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        <section id="about" class="t3-about">
+            <h2>Our Story</h2>
+            <p>{{ user.store_name }} was founded with a passion for delivering excellence.</p>
+        </section>
+        <section id="contact" class="t3-contact">
+            <h2>Reach Out</h2>
+            <p>We'd love to hear from you!</p>
+            <p>Phone: {{ user.phone_number }}</p>
+            <p>Email: {{ user.email }}</p>
+        </section>
+    </main>
+    <footer class="t3-footer">
+        <p>&copy; 2023 {{ user.store_name }}. All rights reserved.</p>
+    </footer>
+</div>
+{% endblock %}
