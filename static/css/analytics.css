@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.analtics {
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.analtics .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.analtics .company-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.analtics .nav-menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.analtics .nav-menu li {
+    margin-bottom: 10px;
+}
+
+.analtics .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.analtics .stat-card {
+    /* background-color: #F0F2F5; */
+    padding: 35px;
+    border-radius: 10px;
+    border: 1px solid rgb(0, 0, 0, 0.5);
+    /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+}
+.analtics .stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.analtics .stat-label {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.analtics .stat-change {
+    font-size: 14px;
+}
+.analtics .overall-anal{
+    display:flex;
+    width: 100%;
+    gap: 3rem;
+}
+
+.analtics .order-summary {
+    margin-bottom: 20px;
+    width: 80%;
+}
+.analtics .order-summary h4{
+    font-size: 16px;
+    opacity: 50%;
+    font-weight: 500;
+    line-height: 20px;
+}
+.analtics .order-summary h3{
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 600;
+}
+.analtics .chart-container{
+    width: 100%;
+}
+
+.analtics .progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #F2F4F7;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.analtics .progress-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+}
+
+.analtics .pending { background-color: #FDB022; }
+.analtics .shipped { background-color: #7C3AED; }
+.analtics .delivered { background-color: #17B26A; }
+
+.analtics .sales-history {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.analtics .sales-history th, .sales-history td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.analtics .sales-history th {
+    background-color: #f8f8f8;
+    font-weight: 500;
+}
+
+.analtics .action-button {
+    background-color: #17B26A;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.analtics .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.analtics .pagination button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background-color: white;
+    cursor: pointer;
+}
+
+.analtics .pagination button.active {
+    background-color: #FDB022;
+    color: white;
+    border-color: #FDB022;
+}

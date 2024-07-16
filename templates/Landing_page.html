@@ -1,0 +1,125 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block title %}<title>InstShop - Your all-in-one platform for ecommerce</title>{% endblock title %}
+{% block css %} <link rel="stylesheet" href="{% static 'css/main.css' %}"> {% endblock css %}
+{% block content %}
+    <div class="container">
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Your all-in-one platform for ecommerce.</h1>
+                <p>Effortlessly create your online store tailored for influencers and small businesses.</p>
+                <a href="#" class="cta-button">Start Your Free Trial</a>
+            </div>
+            <div class="hero-image">
+                <img src="{% static 'asset/hero.svg' %}" alt="Illustration of person using InstShop">
+            </div>
+            
+        </section>
+
+        <div class="content">
+            <div class="how-it-works">
+                <h2>How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="text-container">
+                            <h3>Create Your Store</h3>
+                            <p>Easily set up your online store</p>
+                        </div>
+
+                        <div class="img-container">
+                            <img src="{% static 'asset/1st.svg' %}" alt="Create Your Store">
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="text-container">
+                            <h3>Add Products</h3>
+                            <p>Upload your products with just a few clicks</p>
+                        </div>
+                        <div class="img-container">
+                            <img src="{% static 'asset/3rd.svg' %}" alt="Create Your Store">
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="text-container">
+                            <h3>Start Selling</h3>
+                            <p>Upload your products with just a few clicks</p>
+                        </div>
+                        <div class="img-container">
+                            <img src="{% static 'asset/2nd.svg' %}" alt="Create Your Store">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="how-it-works">
+                <h2>Benefits</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="text-container">
+                            <h3>Save Time and Effort</h3>
+                            <p>Our platform is designed for easy and quick setup</p>
+                        </div>
+
+                        <div class="img-container">
+                            <img src="{% static 'asset/benefit 4.svg' %}" alt="Create Your Store">
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="text-container">
+                            <h3>Increase Sales</h3>
+                            <p>Connect with a large customer base and boost your sales</p>
+                        </div>
+                        <div class="img-container">
+                            <img src="{% static 'asset/benefit 1.png' %}" alt="Create Your Store">
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="text-container">
+                            <h3>Focus on Your Brand</h3>
+                            <p>Let us handle the technicalities while you focus on your brand</p>
+                        </div>
+                        <div class="img-container">
+                            <img src="{% static 'asset/benefit 3.png' %}" alt="Create Your Store">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    
+    </div>
+    <div class="sign-overall">
+        <div class="signup-container">
+            <h1>Ready to get started?</h1>
+            <p>Sign up now and start selling</p>
+            <div class="input-group">
+                <input type="email" placeholder="you@example.com" aria-label="Email address">
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="price-card">
+        <div class="price-inner">
+            <h3>Pricing Plan</h3>
+            <div class="card">
+                <h2 class="card-title">Premium Plan</h2>
+                <div class="price">$6,000</div>
+                <p class="price-details">One-time payment + 0.5% commission per sale</p>
+                <ul class="feature-list">
+                    <li>Full platform access</li>
+                    <li>Unlimited products</li>
+                    <li>24/7 customer support</li>
+                    <li>Advanced analytics</li>
+                    <li>Custom branding</li>
+                </ul>
+                <button class="cta-button">Get Started</button>
+            </div>
+        </div>
+    </div>
+    </body>
+
+    
+{% endblock %}

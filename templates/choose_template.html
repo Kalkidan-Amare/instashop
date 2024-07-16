@@ -1,8 +1,85 @@
-{% extends 'base.html' %}
-
-{% block title %}Choose Your Store Template{% endblock %}
+{% extends 'main.html' %}
+{% load static %}
+{% block title %}<title>Choose Your Store Template</title>{% endblock title %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/choose_template.css' %}">{% endblock css %}
 
 {% block content %}
+
+<main>
+    <h1>Choose Your Store Template</h1>
+    <div class="filters">
+        <input type="search" placeholder="Search" class="search-bar">
+        <div>
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Minimalist</button>
+            <button class="filter-btn">Price descending</button>
+            <button class="filter-btn">Rating</button>
+        </div>
+    </div>
+    <div class="template-grid">
+        {% for template in templates %}
+        <div class="template-card">
+            <img src="{% static 'asset/template_1.png' %}" alt="Spotlight template" class="template-image">
+            <div class="template-info">
+                <div class="card_main">
+                    <div class="template-name">{{ template.name }}</div>
+                    <div class="template-price">Free</div>
+                </div>
+                    <div class="template-description">{{ template.description }}</div>
+                <button class="select-btn">Select Template</button>
+            </div>
+        </div>
+        {% endfor %}
+        {% comment %} <div class="template-card">
+            <img src="{% static 'asset/template_2.png' %}" alt="Rise template" class="template-image">
+            <div class="template-info">
+                <div class="card_main">
+                    <div class="template-name">Rise</div>
+                    <div class="template-price">Premium</div>
+                </div>
+                <div class="template-description">An elegant minimalist template for fashion and accessories. Ideal for showcasing high-end products with style.</div>
+                <button class="select-btn">Select Template</button>
+            </div>
+        </div>
+        <div class="template-card">
+            <img src="{% static 'asset/template_3.png' %}" alt="Demo template" class="template-image">
+            <div class="template-info">
+                <div class="card_main">
+                    <div class="template-name">Demo</div>
+                    <div class="template-price">Free</div>
+                </div>
+                    <div class="template-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                <button class="select-btn">Select Template</button>
+            </div>
+        </div>
+        <div class="template-card">
+            <img src="{% static 'asset/template_2.png' %}" alt="Demo template" class="template-image">
+            <div class="template-info">
+                <div class="card_main">
+                    <div class="template-name">Demo</div>
+                    <div class="template-price">Free</div>
+                </div>
+                    <div class="template-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                <button class="select-btn">Select Template</button>
+            </div>
+        </div>
+    </div> {% endcomment %}
+
+    <div class="pag-main">
+        <div class="pagination">
+            <a href="#" class="arrow">←&nbsp;Previous</a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <span class="ellipsis">...</span>
+            <a href="#">67</a>
+            <a href="#">68</a>
+            <a href="#" class="arrow">Next&nbsp;→</a>
+        </div>
+    </div>
+</main>
+
+{% comment %} 
 <h2 style="color: #333;">Choose Your Store Template</h2>
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
     {% for template in templates %}
@@ -13,5 +90,5 @@
         <a href="{% url 'purchase_template' template.id %}" style="display: inline-block; background: #e8491d; color: #fff; padding: 5px 10px; text-decoration: none; border-radius: 3px;">Select Template</a>
     </div>
     {% endfor %}
-</div>
+</div> {% endcomment %}
 {% endblock %}

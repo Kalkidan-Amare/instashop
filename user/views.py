@@ -13,7 +13,7 @@ def logout_view(request):
     return redirect('home')
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'landing_page.html')
 
 def signup(request):
     if request.method == 'POST':
