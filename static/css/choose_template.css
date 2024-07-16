@@ -1,0 +1,132 @@
+main {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main  .search-bar {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 400px;
+}
+main  .sign-up-btn {
+    background-color: #ffd700;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+main {
+    /* margin-top: 50px; */
+    max-width: 80%;
+    margin: 0px auto;
+    padding: 6px 20px;
+    background-color: #F7FAFA;
+}
+main h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+main  .filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+main  .filter-btn {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+main  .filter-btn  .active {
+    background-color: #ffd700;
+    border-color: #ffd700;
+}
+main  .template-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+main  .template-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+main  .template-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+main  .card_main{
+    display: flex;
+    justify-content: space-between;
+}
+main  .template-info {
+    padding: 15px;
+}
+main  .template-name {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 5px;
+    color: #F5C754;
+}
+main  .template-price {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+main  .template-description {
+    font-size: 11.5px;
+    line-height: 140%;
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-family: 'Poppins';
+}
+main  .select-btn {
+    background-color: #ffd700;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+main  .pag-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+main  .pagination {
+    display: flex;
+    align-items: center;
+    /* background-color: white; */
+    padding: 10px;
+    border-radius: 20px;
+    /* box-shadow: 0 2px 5px rgba(0,0,0,01); */
+}
+main  .pagination a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 12px;
+    margin: 0 4px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+main  .pagination a:hover:not(.active) {
+    background-color: #f0f0f0;
+}
+main  .pagination.active {
+    background-color: #ffd700;
+    color: white;
+}
+main  .pagination .arrow {
+    font-weight: bold;
+}
+main  .ellipsis {
+    margin: 0 4px;
+}

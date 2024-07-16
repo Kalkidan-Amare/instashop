@@ -1,0 +1,260 @@
+:root{
+    --secondary-color: rgba(245, 199, 84, 0.25);
+    --primary-color: rgba(245, 199, 84);
+    --font: 'Plus Jakarta Sans', sans-serif;
+}
+body {
+    margin: 0;
+    max-width: 100%;
+    padding: 0;
+    text-decoration: none;
+    background-color: #F7FAFA;
+    font-family: var(--font)
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    text-decoration: none;
+}
+
+.hero {
+    display: flex;
+    background-color: var(--secondary-color);
+    padding: 20px 250px;
+    font-family: var(--font);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.hero-content {
+    align-content: center;
+    width: 500px;
+    text-align: center;
+    font-family: var(--font);
+    column-gap: 0px;
+}
+.hero-content h1{
+    font-size: 64px;
+    text-align: start;
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 60px;
+    margin-bottom: 0px;
+    /* letter-spacing: -2px; */
+}
+
+.hero-content p{
+    text-align: start;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #141C24;
+}
+
+.hero-image {
+    /* flex: 1; */
+    text-align: center;
+    width: 500px;
+}
+
+.hero-content .cta-button {
+    display: inline-block;
+    padding: 5px 20px;
+    background-color: var(--primary-color);
+    text-decoration: none;
+    color: #141C24;
+    border-radius: 16px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bold;
+    width:fit-content;
+    align-content: center;
+}
+
+
+.content{
+    width: 75%;
+    margin: auto;
+    column-gap: 2rem;
+}
+
+.content .how-it-works {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.content .steps {
+    height: 390px;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+.content .step {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    /* min-height: 100vh; */
+    align-items: center;
+    flex-direction: column;
+    /* padding: 20px; Add padding to prevent content from touching the edges */
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+    border-color: #D4DBE8;
+    border-style: solid;
+    border-radius: 8px;
+}
+
+
+/* Image Container Styles */
+.content .step .img-container {
+    max-width: 100%; /* Ensure image container does not exceed 100% of its parent */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+}
+
+/* Image Styles */
+.content .step .img-container img {
+    width: 100%; /* Ensure image does not exceed its container's width */
+    height: 300px; /* Maintain the aspect ratio of the image */
+    object-fit: fill;
+}
+
+/* Text Styles */
+.content .step  .text-container {
+    text-align: center; /* Center the text */
+    margin-bottom: 20px; /* Add space below the text */
+}
+
+.content .step h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2rem;
+    margin: 0; /* Remove default margin */
+}
+
+.content .step p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1rem;
+    margin: 10px 0 0; /* Add margin above paragraph */
+}
+
+.sign-overall {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+.sign-overall .signup-container {
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.sign-overall h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #333;
+}
+.sign-overall p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+.sign-overall .input-group {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.sign-overall input[type="email"] {
+    /* flex-grow: 1; */
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    width: 320px;
+}
+.sign-overall button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.sign-overall button:hover {
+    background-color: #ffca2c;
+}
+
+.price-card {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.price-card .price-inner {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+    width: 300px;
+    text-align: center;
+    align-content: center;
+}
+.price-card .card {
+    padding: 32px;
+    text-align: center;
+}
+.price-card .card-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 16px;
+}
+.price-card .price {
+    font-size: 48px;
+    font-weight: bold;
+    color: #4a4a4a;
+    margin-bottom: 8px;
+}
+.price-card .price-details {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+.price-card .feature-list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 24px;
+    text-align: left;
+}
+.price-card .feature-list li {
+    margin-bottom: 8px;
+    color: #4a4a4a;
+}
+.price-card .feature-list li::before {
+    content: "✓";
+    color: #4CAF50;
+    margin-right: 8px;
+}
+.price-card .cta-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.price-card .cta-button:hover {
+    background-color: #45a049;
+}

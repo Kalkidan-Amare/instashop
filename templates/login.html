@@ -1,11 +1,16 @@
-{% extends 'base.html' %}
+{% extends 'main.html' %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/login.css' %}">{% endblock css %}
+
 
 {% block content %}
-<h1>Login</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-</form>
-<p>Don't have an account? <a href="{% url 'signup' %}">Sign up here</a>.</p>
+<div class="login-container">
+    <h1>Login</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="{% url 'signup' %}">Sign up here</a>.</p>
+</div>
 {% endblock %}

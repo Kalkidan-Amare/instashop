@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    display: flex; /* Center content */
+    flex-direction: column; /* Allow vertical stacking */
+    min-height: 100vh; /* Ensure full viewport height */
+    box-sizing: border-box; /* Include padding and border in width calculations */
+}
+
+.product-container {
+    padding: 60px;
+    display: flex;
+    background-color: white;
+    overflow: hidden;
+    width: 100%;
+    gap: 2rem;
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+.product-image img{
+    width: 100%;
+    object-fit: cover;
+}
+.product-image {
+    width: 100%;
+    object-fit: cover;
+}
+.product-details {
+    width: 100%;
+    padding: 20px;
+}
+.product-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+.product-tag {
+    display: inline-block;
+    background-color: #CFF7D3;
+    color: #02542D;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.product-price {
+    font-size: 32px;
+    margin: 20px 0;
+}
+.product-description {
+    font-size: 16px;
+    margin: 10px 0;
+}
+.product-label {
+    display: flex;
+    gap: 10px;
+}
+.product-label select {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+}
+.add-to-cart {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 20px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+.product-faq {
+    margin-top: 20px;
+}
+.product-faq-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.product-faq-content {
+    font-size: 14px;
+}
+
+/* REVIEW */
+.reviews-container {
+    width: 90%;
+    /* margin: 0 auto; */
+}
+.reviews-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.reviews {
+    display: flex;
+    gap: 20px;
+}
+.review-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+}
+.review-stars {
+    font-size: 20px;
+    color: #ffc107;
+    margin-bottom: 10px;
+}
+.review-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.review-body {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.review-footer {
+    display: flex;
+    align-items: center;
+}
+.reviewer-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: url('../asset/shoe1.png') no-repeat center center;
+    background-size: cover;
+    margin-right: 10px;
+}
+.reviewer-details {
+    font-size: 14px;
+}
+.reviewer-name {
+    font-weight: bold;
+}
+.review-date {
+    color: gray;
+}
