@@ -3,12 +3,14 @@
 <header>
     <div class="logo">📸 InstShop</div>
     <nav>
-        <a href="{% url "store_view"  request.user.id%}">Shop</a>
+        {% if user.is_authenticated %}
+            <a href="{% url "store_view"  request.user.store_name%}">Shop</a>
+        {% endif %}
         <a href="#">About</a>
         <a href="#">Blog</a>
         <button class="sign-up-btn">
             {% if user.is_authenticated %}
-                <a href="{% url 'store_view' request.user.id %}" style="text-decoration:none" >View Store</a>
+                <a href="{% url 'store_view' request.user.store_name %}" style="text-decoration:none" >View Store</a>
             {% endif %}
         </button>
     </nav>
@@ -17,6 +19,7 @@
         <button class="sign-up-btn">
             {% if user.is_authenticated %}
                 <a href="{% url 'logout' %}" style="text-decoration:none" >Logout</a>
+                <a href="{% url 'login' %}" style="text-decoration:none" >login</a>
             {% else %}
                 <a href="{% url 'signup' %}" style="text-decoration:none" >Sign Up</a>
             {% endif %}

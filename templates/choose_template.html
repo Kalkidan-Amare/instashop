@@ -18,13 +18,26 @@
     </div>
     
     <div class="template-grid">
+        <div class="template-card">
+            <img src="{% static 'asset/template_1.png' %}" alt="Spotlight template" class="template-image">
+            <div class="template-info">
+                <div class="card_main">
+                    <div class="template-name">Minimalist</div>
+                    <div class="template-price">Free</div>
+                </div>
+                    <div class="template-description">V</div>
+                <button class="select-btn">
+                    <a href="#">Select Template</a>
+                </button>
+            </div>
+        </div>
         {% for template in templates %}
         <div class="template-card">
             <img src="{% static 'asset/template_1.png' %}" alt="Spotlight template" class="template-image">
             <div class="template-info">
                 <div class="card_main">
                     <div class="template-name">{{ template.name }}</div>
-                    <div class="template-price">Free</div>
+                    <div class="template-price">{{template.price}}</div>
                 </div>
                     <div class="template-description">{{ template.description }}</div>
                 <button class="select-btn">

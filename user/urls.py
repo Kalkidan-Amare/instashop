@@ -13,7 +13,7 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('choose-template/', views.choose_template, name='choose_template'),
     path('purchase-template/<int:template_id>/', views.purchase_template, name='purchase_template'),
-    path('<int:id>/', views.store_view, name='store_view'),
+    path('<str:slug>/', views.store_view, name='store_view'),
     path('product-detail/<int:id>/', views.product_detail, name='product-detail'),
 ]
 if settings.DEBUG:

@@ -48,10 +48,10 @@ def purchase_template(request, template_id):
     request.user.template = template
     request.user.is_seller = True
     request.user.save()
-    return redirect('store_view', request.user.id)
+    return redirect('store_view', request.user.store_name)
 
-def store_view(request, id):
-    store_owner = get_object_or_404(User, id=id)
+def store_view(request, slug):
+    store_owner = get_object_or_404(User, store_name=slug)
     products = Product.objects.filter(owner=store_owner)
     
     context = {'store_owner': store_owner, 'products': products}
