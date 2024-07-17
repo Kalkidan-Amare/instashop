@@ -72,7 +72,7 @@
             <textarea id="note" name="note" placeholder="Enter any additional notes" required></textarea>
 
             <button type="submit" class="btn">
-                <a href="{% url 'store_view' request.user.id %}"> Submit</a></button>
+                <a href="{% url 'store_view' request.user.store_name %}">Submit</a></button>
             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
     </div>
