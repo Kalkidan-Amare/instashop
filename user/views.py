@@ -53,9 +53,18 @@ def purchase_template(request, template_id):
 def store_view(request, id):
     store_owner = get_object_or_404(User, id=id)
     products = Product.objects.filter(owner=store_owner)
+    
     context = {'store_owner': store_owner, 'products': products}
     render_template = store_owner.template.name
+
     if request.user == store_owner:
         orders = Order.objects.filter(seller=store_owner)
         context['orders'] = orders
+    
     return render(request, f'store_templates/{render_template}.html', context)
+
+def product_detail(request, id):
+    product = Product.objects.get(id=id)
+    context = {'product':product}
+    
+    return render(request, 'store/product_detail.html', context)

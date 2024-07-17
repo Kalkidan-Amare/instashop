@@ -1,0 +1,93 @@
+{% extends "store/store_main.html" %}
+{% load static %}
+{% block title %}<title>Shopping Cart</title>{% endblock title %}
+{% block css %}<link rel="stylesheet" href="{% static 'css.add_to_cart.css' %}">{% endblock css %}
+
+{% block content %}
+<div class='body'>
+    {% comment %} <div class="container">
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="snickers-off-white-2024.jpg" alt="Snickers Off-White 2024">
+                        <span>Snickers Off-White 2024</span>
+                    </td>
+                    <td>4000</td>
+                    <td>
+                        <input type="number" value="1" min="1">
+                    </td>
+                    <td>4000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="nike-jordan-6.jpg" alt="Nike Jordan 6">
+                        <span>Nike Jordan 6</span>
+                    </td>
+                    <td>3500</td>
+                    <td>
+                        <input type="number" value="1" min="1">
+                    </td>
+                    <td>3500</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="cart-actions">
+            <button class="btn" onclick="returnToShop()">Return To Shop</button>
+            <button class="btn" onclick="updateCart()">Update Cart</button>
+        </div>
+        <div class="coupon">
+            <input type="text" placeholder="Coupon Code">
+            <button class="btn">Apply Coupon</button>
+        </div>
+        <div class="cart-summary">
+            <div class="summary-item">
+                <span>Subtotal:</span>
+                <span>7500</span>
+            </div>
+            <div class="summary-item">
+                <span>Shipping:</span>
+                <span>100</span>
+            </div>
+            <div class="summary-item total">
+                <span>Total:</span>
+                <span>7600</span>
+            </div>
+            <button class="btn checkout-btn">Proceed to checkout</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script> {% endcomment %}
+    <h1>Your Cart</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart_items %}
+                <tr>
+                    <td>{{ item.product.name }}</td>
+                    <td>{{ item.product.price }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.get_total_price }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h2>Total: {{ total_price }}</h2>
+        <a href="#">Proceed to Checkout</a>
+</div>
+{% endblock content %}

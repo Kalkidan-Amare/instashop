@@ -1,13 +1,8 @@
-body {
-    font-family: Arial, sans-serif;
-    justify-content: center;
-    align-items: center;
+.body {
+    font-family: 'Work Sans';
     margin: 0;
-    width: 100%;
-    display: flex; /* Center content */
-    flex-direction: column; /* Allow vertical stacking */
-    min-height: 100vh; /* Ensure full viewport height */
-    box-sizing: border-box; /* Include padding and border in width calculations */
+    padding: 0;
+    display: flex;
 }
 
 .product-container {
@@ -76,6 +71,7 @@ body {
     font-size: 16px;
     font-weight: bold;
 }
+
 .product-faq {
     margin-top: 20px;
 }

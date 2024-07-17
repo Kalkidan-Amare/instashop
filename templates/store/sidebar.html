@@ -1,4 +1,6 @@
 {% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/sidebar.css' %}">{% endblock css %}
+
 <div class="sidebar">
     <div class="company-info">
         <div class="avatar"></div>
@@ -9,5 +11,5 @@
     <div class="menu-item"><i>📋</i> Orders</div>
     <div class="menu-item"><i>🗄️</i> Inventory</div>
     <div class="menu-item"><i>📣</i> Marketing</div>
-    <div class="menu-item"><i>📊</i> Analytics</div>
+    <div class="menu-item"><a href="{% url 'analytics' %}" style="text-decoration:none" ><i>📊</i> Analytics</a></div>
 </div>

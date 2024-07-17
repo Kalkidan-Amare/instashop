@@ -1,0 +1,82 @@
+{% extends "store/store_main.html" %}
+{% load static %}
+{% block title %}<title>Cart</title> {% endblock title %}
+{% block css %} <link rel="stylesheet" href="{% static 'css/cart.css' %}">{% endblock css %}
+
+{% block content %}
+<body>
+    <div class="container">
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart_items %}
+                <tr>
+                    <td>
+                        {% comment %} <img src="{{ item.image.url}}" alt="Snickers Off-White 2024"> {% endcomment %}
+                        <span>{{ item.product.name }}</span>
+                    </td>
+                    <td>{{ item.product.price }}</td>
+                    <td>
+                        <input type="number" value="1" min="1">
+                    </td>
+                    <td>{{ item.get_total_price }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="cart-actions">
+            <button class="btn" onclick="returnToShop()">Return To Shop</button>
+            <button class="btn" onclick="updateCart()">Update Cart</button>
+        </div>
+        <div class="coupon">
+            <input type="text" placeholder="Coupon Code">
+            <button class="btn">Apply Coupon</button>
+        </div>
+        <div class="cart-summary">
+            <div class="summary-item">
+                <span>Subtotal:</span>
+                <span> {{total_price}}</span>
+            </div>
+            <div class="summary-item">
+                <span>Shipping:</span>
+                <span>100</span>
+            </div>
+            <div class="summary-item total">
+                <span>Total:</span>
+                <span>{{tot}}</span>
+            </div>
+            <button class="btn checkout-btn" onclick="showForm()">Proceed to checkout</button>
+        </div>
+    </div>
+
+    <div id="form-popup" class="form-popup">
+        <form class="form-container">
+            <h2>Checkout Form</h2>
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="full-name" placeholder="Enter Full name" required>
+
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" placeholder="Enter Location" required>
+
+            <label for="phone-number">Phone Number</label>
+            <input type="tel" id="phone-number" name="phone-number" placeholder="Enter Phone number" required>
+
+            <label for="note">Additional Note</label>
+            <textarea id="note" name="note" placeholder="Enter any additional notes" required></textarea>
+
+            <button type="submit" class="btn">
+                <a href="{% url 'store_view' request.user.id %}"> Submit</a></button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+
+    <script src="scripts.js"></script>
+
+{% endblock content %}

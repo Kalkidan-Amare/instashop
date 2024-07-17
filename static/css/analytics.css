@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap');
 
-body {
+.body {
     font-family: 'Work Sans', sans-serif;
     margin: 0;
-    padding: 20px;
+    display: flex;
+    /* height: 100vh; */
     background-color: #f5f5f5;
 }
 
 .analtics {
-    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
     background-color: white;
     padding: 20px;

@@ -24,17 +24,20 @@
     <div class="collections">
         <h2>Collections</h2>
         <div class="product-grid">
+            {% for product in products %}
             <div class="product-card">
-                <img src="./asset/shoe1.png" alt="Snickers Off-White 2024" class="product-image">
+                <img src="{{ product.image.url }}" alt="{{product.name}}" class="product-image">
                 <div class="product-info">
                     <div class="upper">
-                        <h3>Snickers Off-White 2024</h3>
-                        <div class="product-price">3500 Br.</div>
+                        <h3><a href="{% url 'product-detail' product.id %}">{{product.name}}</a></h3>
+                        <div class="product-price">{{product.price}}Br.</div>
                     </div>
-                    <p>NIKE</p>
+                    <p>{{product.description}}</p>
                 </div>
             </div>
-            <div class="product-card">
+            {% endfor %}
+
+            {% comment %} <div class="product-card">
                 <img src="./asset/shoe2.png" alt="Snickers Off-White 2024" class="product-image">
                 <div class="product-info">
                     <div class="upper">
@@ -63,7 +66,7 @@
                     </div>
                     <p>NIKE</p>
                 </div>
-            </div>
+            </div> {% endcomment %}
             <!-- Repeat the product-card div for more products -->
         </div>
     </div>

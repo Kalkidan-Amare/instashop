@@ -10,37 +10,10 @@
     {% include "store/sidebar.html" %}
     <div class="add_product">
         <h1>Add product</h1>
-        <form>
-            <div class="form-group">
-                <label for="product-name">Product name</label>
-                <input type="text" id="product-name" placeholder="Product Name">
-            </div>
-            <div class="form-group">
-                <label for="description">Description</label>
-                <textarea id="description"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="price">Price</label>
-                <input type="text" id="price" placeholder="$50.00">
-            </div>
-            <div class="form-group">
-                <label for="category">Product Category</label>
-                <select id="category">
-                    <option value="">Select product type</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="quantity">Quantity</label>
-                <input type="number" id="quantity" value="0">
-            </div>
-            <div class="form-group">
-                <label>Upload Image</label>
-                <div class="upload-area">
-                    <div class="upload-icon">☁️</div>
-                    <div>Drag & drop files or <a href="#">Browse</a></div>
-                    <div class="supported-formats">Supported formats: JPEG, PNG, GIF, MP4, PDF, PSD, AI, Word, PPT</div>
-                </div>
-            </div>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+            
             <button type="submit" class="save-btn">Save</button>
         </form>
     </div>

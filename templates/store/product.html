@@ -2,10 +2,8 @@
 {% load static %}
 
 {% block title %}<title>Products</title>{% endblock title %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/product.css' %}">{% endblock css %}
 
-{% block css %}
-{% comment %} <link rel="stylesheet" href="{% static 'css/' %}"> {% endcomment %}
-{% endblock css %}
 
 {% block content %}
 <div class='body'>
@@ -15,8 +13,38 @@
             <h1>Products</h1>
             <a href="{% url 'add_product' %}" class="add-product-btn">Add New Product</a>
         </div>
-
-        <div class="products-list">
+        
+        <div class="orders">
+            <h1>Recent orders</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Items</th>
+                        <th>Status</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                    <tr>
+                        <td>{{product.name}}</td>
+                        <td>{{ product.uploaded_at}}</td>
+                        <td>{{product.stock}}</td>
+                        <td><span class="status in-transit">In transit</span></td>
+                        <td>{{product.price}} Br.</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="4">No products available. Add your first product!</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+        {% comment %} <div class="products-list">
             <table>
                 <thead>
                     <tr>
@@ -44,7 +72,7 @@
                     {% endfor %}
                 </tbody>
             </table>
-        </div>
+        </div> {% endcomment %}
     </div>
 </div>
 {% endblock content %}

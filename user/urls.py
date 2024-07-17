@@ -1,6 +1,9 @@
 from django.urls import path
 from . import views
 from django.contrib.auth import views as auth_views
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -11,4 +14,7 @@ urlpatterns = [
     path('choose-template/', views.choose_template, name='choose_template'),
     path('purchase-template/<int:template_id>/', views.purchase_template, name='purchase_template'),
     path('<int:id>/', views.store_view, name='store_view'),
+    path('product-detail/<int:id>/', views.product_detail, name='product-detail'),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

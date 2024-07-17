@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analytics Dashboard</title>
-    <link rel="stylesheet" href="./css/analytics.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% extends "store/store_main.html" %}
+{% load static %}
+{% block title %}<title>Analytics Dashboard</title>{% endblock title %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/analytics.css' %}">{% endblock css %}
 
-</head>
-<body>
+{% block content %}
+<div class='body'>
+    {% include "store/sidebar.html" %}
     <div class="analtics">
         <div class="header">
             <div class="company-name">Acme Inc</div>
@@ -103,6 +100,5 @@
         </div>
     </div>
     <script src="./JS/cart.js"></script>
-
-</body>
-</html>
+</div>
+{% endblock content %}

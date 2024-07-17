@@ -1,0 +1,33 @@
+.sidebar {
+    width: 200px;
+    background-color: #ffffff;
+    padding: 20px;
+    height: 100vh;
+    /* box-shadow: 2px 0 5px rgba(0,0,0,0.1); */
+    font-size: 14px;
+    font-weight: 600;
+}
+.company-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.menu-item.active {
+    background-color: #F0F2F5;
+    border-radius: 8px;
+}
+.menu-item i {
+    margin-right: 10px;
+}
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
