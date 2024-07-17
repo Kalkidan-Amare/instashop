@@ -13,16 +13,19 @@ This project is a Django-based web application that emulates core functionalitie
 ## Features
 
 - User Registration and Authentication
-- Product Management (Create, Read, Update, Delete Products)
+- Template Choice
+- Product Management
 - Image uploads for Products
+- General Reports
 - User-specific product lists
 - Search functionality
-- Integration with third-party storage and delivery services
+- Integration with third-party services
 
 ## Images
 
 ### The Landing Page
-![Landing Page](templates/media/image_readme/landing1.png)(templates/media/image_readme/landing2.png)
+![Landing Page](templates/media/image_readme/landing1.png)
+![Landing Page2](templates/media/image_readme/landing2.png)
 
 ### The Template Choice
 ![Template Choice](templates/media/image_readme/template.png)
@@ -52,17 +55,17 @@ This project is a Django-based web application that emulates core functionalitie
 
 ### Course Management
 
--Admin users can create and manage products through the admin interface.
--Users can view a list of products, search for products, and add products to their personal list.
+- Admin users can create and manage products through the admin interface.
+- Users can view a list of products, search for products, and add products to their personal list.
 
 ### Seller Features
 
--Sellers can choose from various templates for their website design.
--Sellers can add products to their website through a user-friendly interface.
--A dashboard is available for sellers to track overall traffic and transactions on their website.
+- Sellers can choose from various templates for their website design.
+- Sellers can add products to their website through a user-friendly interface.
+- A dashboard is available for sellers to track overall traffic and transactions on their website.
 
 ### Buyer Features
--Buyers can visit the sellers' websites and purchase products directly.
+- Buyers can visit the sellers' websites and purchase products directly.
 
 ## Contributors
 
