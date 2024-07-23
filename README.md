@@ -1,6 +1,6 @@
-# Udemy Clone Django Project
+# InstaShop Dropshipping Platform
 
-This project is a Django-based web application that emulates core functionalities of Udemy, a popular online learning platform. The application supports user registration, authentication, course management, and payments.
+This project is a Django-based web application that simplifies web development and deployment for small and medium-sized businesses (SMBs), particularly for influencers and small-medium businesses in Africa. It aims to reduce costs and streamline the process of creating and managing online stores by integrating with third-party storage and delivery services.
 
 ## Table of Contents
 
